@@ -5,7 +5,7 @@ R package with utility functions for the Models and Simulation course.
 
 # How to install
 
-you can install this through use devtools:
+You can install this via devtools:
 
 ```r
 devtools::install_github("mnaR99/mshelpers", upgrade_dependencies = FALSE)
@@ -17,5 +17,5 @@ To see the full list of exported functions:
 
 ```{r}
 library(mshelpers)
-ls("package:tinyutils")
+ls("package:mshelpers")
 ```

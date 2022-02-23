@@ -4,7 +4,7 @@
 \alias{plot_continuous}
 \title{Histogram}
 \usage{
-plot_continuous(v, fun = NULL, args = NULL, ...)
+plot_continuous(v, fun = NULL, args = NULL, fill = "#C3395B", ...)
 }
 \arguments{
 \item{v}{numeric vector}
@@ -12,6 +12,8 @@ plot_continuous(v, fun = NULL, args = NULL, ...)
 \item{fun}{function to plot}
 
 \item{args}{list of arguments passed to fun}
+
+\item{...}{other arguments passed on to \code{\link[ggplot2]{geom_histogram}}}
 }
 \description{
 Plots a histogram with the possibility of overlaying a function

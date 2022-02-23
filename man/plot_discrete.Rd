@@ -4,7 +4,7 @@
 \alias{plot_discrete}
 \title{Barplot}
 \usage{
-plot_discrete(v, fun = NULL, args = NULL, ...)
+plot_discrete(v, fun = NULL, args = NULL, fill = "#C3395B", ...)
 }
 \arguments{
 \item{v}{numeric vector}
@@ -12,6 +12,8 @@ plot_discrete(v, fun = NULL, args = NULL, ...)
 \item{fun}{function to graph}
 
 \item{args}{list of arguments passed to fun}
+
+\item{...}{other arguments passed on to \code{\link[ggplot2]{stat_count}}}
 }
 \description{
 Plots a barplot with the possibility of overlaying a discrete function

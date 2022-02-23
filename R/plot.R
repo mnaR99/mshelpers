@@ -6,9 +6,10 @@
 #' @param v numeric vector
 #' @param fun function to plot
 #' @param args list of arguments passed to fun
+#' @param ... other arguments passed on to \code{\link[ggplot2]{geom_histogram}}
 #' @export
 
-plot_continuous <- function(v, fun = NULL, args = NULL, ...){
+plot_continuous <- function(v, fun = NULL, args = NULL, fill = "#C3395B", ...){
 
     if (!is.null(fun)) {
         plot_fun <-
@@ -26,7 +27,7 @@ plot_continuous <- function(v, fun = NULL, args = NULL, ...){
         ggplot2::ggplot() +
         ggplot2::geom_histogram(
             ggplot2::aes(x, ..density..),
-            fill = "#C3395B",
+            fill = fill,
             ...
         ) +
         plot_fun
@@ -40,9 +41,10 @@ plot_continuous <- function(v, fun = NULL, args = NULL, ...){
 #' @param v numeric vector
 #' @param fun function to graph
 #' @param args list of arguments passed to fun
+#' @param ... other arguments passed on to \code{\link[ggplot2]{stat_count}}
 #' @export
 
-plot_discrete <- function(v, fun = NULL, args = NULL, ...){
+plot_discrete <- function(v, fun = NULL, args = NULL, fill = "#C3395B", ...){
 
     if (!is.null(fun)) {
         plot_fun <-
@@ -61,7 +63,7 @@ plot_discrete <- function(v, fun = NULL, args = NULL, ...){
         ggplot2::ggplot() +
         ggplot2::stat_count(
             ggplot2::aes(x, ..prop..),
-            fill = "#C3395B",
+            fill = fill,
             ...
         ) +
         plot_fun

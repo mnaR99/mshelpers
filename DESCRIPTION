@@ -11,5 +11,4 @@ RoxygenNote: 7.1.2
 Imports: 
     ggplot2,
     magrittr,
-    purrr,
-    tibble
+    purrr

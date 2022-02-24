@@ -23,10 +23,9 @@ plot_continuous <- function(v, fun = NULL, args = NULL, fill = "#C3395B", ...){
         plot_fun <- NULL
     }
 
-    tibble::tibble(x = v) %>%
-        ggplot2::ggplot() +
+    ggplot2::ggplot() +
         ggplot2::geom_histogram(
-            ggplot2::aes(x, ..density..),
+            ggplot2::aes({{v}}, ..density..),
             fill = fill,
             ...
         ) +
@@ -59,10 +58,9 @@ plot_discrete <- function(v, fun = NULL, args = NULL, fill = "#C3395B", ...){
         plot_fun <- NULL
     }
 
-    tibble::tibble(x = v) %>%
-        ggplot2::ggplot() +
+    ggplot2::ggplot() +
         ggplot2::stat_count(
-            ggplot2::aes(x, ..prop..),
+            ggplot2::aes({{v}}, ..prop..),
             fill = fill,
             ...
         ) +

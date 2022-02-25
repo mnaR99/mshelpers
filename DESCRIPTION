@@ -1,6 +1,6 @@
 Package: mshelpers
-Title: MSHelpers
-Version: 0.1
+Title: Models and Simulation course utility functions
+Version: 0.2
 Authors@R: 
     person("Jacob", "Hernandez", email = "jacobhdezm@outlook.com", role = c("aut", "cre"))
 Description: Utility functions for the Models and Simulation course

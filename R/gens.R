@@ -46,7 +46,7 @@ wh <- function(n, seed, a, c, m) {
 #' for the maximum constant such that \eqn{f(y)/g(y)<=c} for all y.
 #' @export
 
-arm <- function(n, f, g, rg, c) {
+ar_method <- function(n, f, g, rg, c) {
 
     if (length(c) == 2) {
         c <- optimize(function(x) f(x)/g(x), c, maximum = T)$objective
@@ -61,6 +61,31 @@ arm <- function(n, f, g, rg, c) {
         if (u <= f(y)/(c*g(y))) {
             r <- append(r, y)
         }
+    }
+
+    return(r)
+}
+
+#' Composition Method
+#'
+#' @param n number of random numbers
+#' @param qfns list of the quantile functions in order
+#' @param p vector of probabilities in order
+#' @export
+
+comp_method <- function(n, qfns, p){
+
+    stopifnot(sum(p) == 1)
+
+    r <- numeric(n)
+    cp <- cumsum(p)
+
+    for (i in seq_len(n)) {
+
+        u <- runif(2)
+        j <- which(u[1] < cp) %>% min()
+        r[i] <- qfns[[j]](u[2])
+
     }
 
     return(r)

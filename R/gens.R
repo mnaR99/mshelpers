@@ -90,3 +90,25 @@ comp_method <- function(n, qfns, p){
 
     return(r)
 }
+
+#' Composition method (Continuous)
+#'
+#' @param n number of random numbers
+#' @param qfy quantile function of Y
+#' @param qfx quantile function of X|Y, where the first argument is the probability and the second
+#' is y
+#' @export
+
+comp_method_c <- function(n, qfy, qfx) {
+
+    r <- numeric(n)
+
+    for (i in seq_len(n)) {
+
+        u <- runif(2)
+        r[i] <- qfx(u[2], qfy(u[1]))
+
+    }
+
+    return(r)
+}

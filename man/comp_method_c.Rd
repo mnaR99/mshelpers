@@ -15,5 +15,5 @@ comp_method_c(n, qfy, qfx)
 is y}
 }
 \description{
-Composition method (Continuous)
+\deqn{F(x) = \int_{-\infty}^{\infty} F_{X|Y=y}(x,y) f_{Y}(y) dy}
 }

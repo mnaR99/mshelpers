@@ -2,17 +2,17 @@
 % Please edit documentation in R/gens.R
 \name{comp_method}
 \alias{comp_method}
-\title{Composition Method}
+\title{Composition method}
 \usage{
 comp_method(n, qfns, p)
 }
 \arguments{
 \item{n}{number of random numbers}
 
-\item{qfns}{list of the quantile functions in order}
+\item{qfns}{list of the \eqn{k} quantile functions in order}
 
-\item{p}{vector of probabilities in order}
+\item{p}{vector of \eqn{k} probabilities in order}
 }
 \description{
-Composition Method
+\deqn{F(x) = \sum (p_i * F_i(x)) , 1 \le i \le k}
 }

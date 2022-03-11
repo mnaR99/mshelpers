@@ -16,7 +16,7 @@ ar_method(n, f, g, rg, c)
 \item{rg}{random number generator function with distribution g}
 
 \item{c}{constant or a vector containing the end-points of the interval to be searched
-for the maximum constant such that \eqn{f(y)/g(y)<=c} for all y.}
+for the maximum constant such that \eqn{f(y)/g(y)<=c} for all \eqn{y}}
 }
 \description{
 Acceptance-Rejection method

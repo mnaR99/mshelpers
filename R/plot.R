@@ -40,10 +40,12 @@ plot_continuous <- function(v, fun = NULL, args = NULL, fill = "#C3395B", ...){
 #' @param v numeric vector
 #' @param fun function to graph
 #' @param args list of arguments passed to fun
+#' @param n desired number of breaks in x axis. You may get slightly more or fewer breaks
+#' that requested.
 #' @param ... other arguments passed on to \code{\link[ggplot2]{stat_count}}
 #' @export
 
-plot_discrete <- function(v, fun = NULL, args = NULL, fill = "#C3395B", ...){
+plot_discrete <- function(v, fun = NULL, args = NULL, fill = "#C3395B", n = 5, ...) {
 
     if (!is.null(fun)) {
         plot_fun <-
@@ -64,5 +66,6 @@ plot_discrete <- function(v, fun = NULL, args = NULL, fill = "#C3395B", ...){
             fill = fill,
             ...
         ) +
+        scale_x_continuous(breaks = scales::pretty_breaks(n = n)) +
         plot_fun
 }

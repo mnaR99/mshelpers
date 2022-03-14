@@ -4,7 +4,7 @@
 \alias{plot_discrete}
 \title{Barplot}
 \usage{
-plot_discrete(v, fun = NULL, args = NULL, fill = "#C3395B", ...)
+plot_discrete(v, fun = NULL, args = NULL, fill = "#C3395B", n = 5, ...)
 }
 \arguments{
 \item{v}{numeric vector}
@@ -12,6 +12,9 @@ plot_discrete(v, fun = NULL, args = NULL, fill = "#C3395B", ...)
 \item{fun}{function to graph}
 
 \item{args}{list of arguments passed to fun}
+
+\item{n}{desired number of breaks in x axis. You may get slightly more or fewer breaks
+that requested.}
 
 \item{...}{other arguments passed on to \code{\link[ggplot2]{stat_count}}}
 }

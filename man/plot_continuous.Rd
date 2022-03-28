@@ -4,7 +4,7 @@
 \alias{plot_continuous}
 \title{Histogram}
 \usage{
-plot_continuous(v, fun = NULL, args = NULL, fill = "#C3395B", ...)
+plot_continuous(v, fun = NULL, args = NULL, fill = "#C3395B", ..., xlim = NULL)
 }
 \arguments{
 \item{v}{numeric vector}
@@ -14,6 +14,8 @@ plot_continuous(v, fun = NULL, args = NULL, fill = "#C3395B", ...)
 \item{args}{list of arguments passed to fun}
 
 \item{...}{other arguments passed on to \code{\link[ggplot2]{geom_histogram}}}
+
+\item{xlim}{optionally, restrict the range of the function to this range}
 }
 \description{
 Plots a histogram with the possibility of overlaying a function

@@ -1,6 +1,6 @@
 Package: mshelpers
 Title: Models and Simulation course utility functions
-Version: 0.4
+Version: 0.5
 Authors@R: 
     person("Jacob", "Hernandez", email = "jacobhdezm@outlook.com", role = c("aut", "cre"))
 Description: Utility functions for the Models and Simulation course
@@ -9,7 +9,12 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
+    dplyr,
     ggplot2,
     magrittr,
     purrr,
     scales
+Suggests: 
+    patchwork
+Depends: 
+    univariateML

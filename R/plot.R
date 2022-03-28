@@ -7,9 +7,10 @@
 #' @param fun function to plot
 #' @param args list of arguments passed to fun
 #' @param ... other arguments passed on to \code{\link[ggplot2]{geom_histogram}}
+#' @param xlim optionally, restrict the range of the function to this range
 #' @export
 
-plot_continuous <- function(v, fun = NULL, args = NULL, fill = "#C3395B", ...){
+plot_continuous <- function(v, fun = NULL, args = NULL, fill = "#C3395B", ..., xlim = NULL){
 
     if (!is.null(fun)) {
         plot_fun <-
@@ -17,7 +18,8 @@ plot_continuous <- function(v, fun = NULL, args = NULL, fill = "#C3395B", ...){
                 geom = "line",
                 fun = fun,
                 args = args,
-                n = 5e3
+                n = 5e3,
+                xlim = xlim
             )
     } else {
         plot_fun <- NULL

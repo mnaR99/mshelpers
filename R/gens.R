@@ -175,3 +175,40 @@ convol_method <- function(n, y, qfns) {
 
     return(r)
 }
+
+#' Box–Muller transform
+#'
+#' Random number generator for pairs of independent, standard, normal distributions.
+#'
+#' @param n number of random numbers
+#' @export
+
+rnorm_boxmuller <- function(n) {
+
+    u1 <- runif(n)
+    u2 <- runif(n)
+    z1 <- sqrt(-2 * log(u1)) * cos(2 * pi * u2)
+    z2 <- sqrt(-2 * log(u1)) * sin(2 * pi * u2)
+
+    return(cbind(z1, z2))
+}
+
+#' Multivariate Normal Distribution
+#'
+#' Random number generator for the multivariate normal distribution with mean equal to
+#' \eqn{u} and covariance matrix \eqn{S}.
+#'
+#' @param n number of random numbers
+#' @param u mean vector
+#' @param S covariance matrix
+#' @export
+
+rmvnorm <- function(n, u, S) {
+
+    d <- length(u)
+    Z <- matrix(rnorm(n * d), n, d)
+    C <- chol(S)
+    X <- t(Z %*% C) + u
+
+    return(t(X))
+}

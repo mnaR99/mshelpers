@@ -18,6 +18,9 @@ ar_method(n, f, g, rg, c)
 \item{c}{constant or a vector containing the end-points of the interval to be searched
 for the maximum constant such that \eqn{f(y)/g(y)<=c} for all \eqn{y}}
 }
+\value{
+Vector of random numbers, with the acceptance rate and optimal \eqn{c} as attributes.
+}
 \description{
 Acceptance-Rejection method
 }

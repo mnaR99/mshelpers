@@ -38,6 +38,8 @@ wh <- function(n, seed, a, c, m) {
 
 #' Acceptance-Rejection method
 #'
+#' @returns Vector of random numbers, with the acceptance rate and optimal \eqn{c} as attributes.
+#'
 #' @param n number of random numbers
 #' @param f interest density function
 #' @param g sampling density function
@@ -54,7 +56,11 @@ ar_method <- function(n, f, g, rg, c) {
 
     r <- numeric()
 
+    iters <- 0
+
     while (length(r) < n) {
+        iters <- iters + 1
+
         y <- rg(1)
         u <- runif(1)
 
@@ -62,6 +68,9 @@ ar_method <- function(n, f, g, rg, c) {
             r <- append(r, y)
         }
     }
+
+    attr(r, "acc_rate") <- n / iters
+    attr(r, "optim_c") <- c
 
     return(r)
 }
